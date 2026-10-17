@@ -1,0 +1,171 @@
+﻿{
+    "generatedAt":  "2026-10-17T13:18:19.8731824+08:00",
+    "root":  "domain",
+    "files":  [
+                  {
+                      "path":  "domain/go.mod",
+                      "bytes":  25,
+                      "sha256":  "589049eaa3bb3ba135bc1152dd7b1058397a9c5f85af9d3b94a5e67734c2ffca"
+                  },
+                  {
+                      "path":  "domain/internal/dungeon/shared.go",
+                      "bytes":  8051,
+                      "sha256":  "f4a15b83d988a9e3682c263566068cc0623a3ee38602b0f0ff1859657c71cd5d"
+                  },
+                  {
+                      "path":  "domain/internal/dungeon/shared_test.go",
+                      "bytes":  4589,
+                      "sha256":  "5e7526070d57b3c96b6a03970e220397c0193f7b6eb50a0cba3a2891cf73018d"
+                  },
+                  {
+                      "path":  "domain/internal/ordinary/service.go",
+                      "bytes":  4514,
+                      "sha256":  "2d2bf60a6f4814f2aae0bbf16c9b0d79c37dbca9e7c2b1a27ba5c2b2a9a8a9ed"
+                  },
+                  {
+                      "path":  "domain/internal/ordinary/service_test.go",
+                      "bytes":  1582,
+                      "sha256":  "3901af7474893d31726aae344c15299bac1354408b123f727e6167305a9359f8"
+                  },
+                  {
+                      "path":  "domain/internal/party/controlled_actors.go",
+                      "bytes":  3364,
+                      "sha256":  "64f643a572ffa1c49d9358a973e73c1e607715c14103e7185bedcbf9ac520f35"
+                  },
+                  {
+                      "path":  "domain/internal/party/controlled_actors_test.go",
+                      "bytes":  1314,
+                      "sha256":  "87cbbe86d408379e443257f2ecab70ae5917ebe4ee9b04044aff912bca9e82b3"
+                  },
+                  {
+                      "path":  "domain/internal/party/departure_test.go",
+                      "bytes":  751,
+                      "sha256":  "5099eb476e7f39e4c58f845e284706b82da45a74424db3542cceed8d00345c29"
+                  },
+                  {
+                      "path":  "domain/internal/party/directory.go",
+                      "bytes":  1724,
+                      "sha256":  "fd647988d6ae1cb9c2cfedf9d5d5f2a79a1d80e15f39507f493faa0929c1db80"
+                  },
+                  {
+                      "path":  "domain/internal/party/hub.go",
+                      "bytes":  11047,
+                      "sha256":  "804595852ad8c66c024e078ca9b3844298c04f7766160c5c97c0bbc6bf68066d"
+                  },
+                  {
+                      "path":  "domain/internal/party/hub_test.go",
+                      "bytes":  4459,
+                      "sha256":  "207ed6e703fb69473406cc40c65b6521e51d9de67ab38cf52750cf6bcc39d51d"
+                  },
+                  {
+                      "path":  "domain/internal/party/join_request_test.go",
+                      "bytes":  2620,
+                      "sha256":  "873b2d4b22faa543e088048ddf1b6a08c4831dcfd3512a780071f02dffe6c60c"
+                  },
+                  {
+                      "path":  "domain/internal/party/lifecycle_candidate_test.go",
+                      "bytes":  1013,
+                      "sha256":  "6e9a75ef0ace9aa93882bca760d48c9e492917b0e0da15aa34a0c00230b6c320"
+                  },
+                  {
+                      "path":  "domain/internal/party/moon_progress.go",
+                      "bytes":  1391,
+                      "sha256":  "43fa6954e2b92a7241edbcee0208cf7d3a88fd4bd99a32191eab84d56a17de93"
+                  },
+                  {
+                      "path":  "domain/internal/party/moon_progress_test.go",
+                      "bytes":  1344,
+                      "sha256":  "db0ef1d849c97d6dfb4856e41f13087fab3985cc9e3a3e65bd087363933a2dcf"
+                  },
+                  {
+                      "path":  "domain/internal/party/network.go",
+                      "bytes":  1147,
+                      "sha256":  "4f9fcfa1fcdbe5b76c05378b744dc6e6ff502397731c6a599ef2f77a55395489"
+                  },
+                  {
+                      "path":  "domain/internal/party/notices.go",
+                      "bytes":  1804,
+                      "sha256":  "56f455354888d87b8ebeb151520abb216bcea984e9d96549a29877b1b8183a7e"
+                  },
+                  {
+                      "path":  "domain/internal/party/public_profile.go",
+                      "bytes":  289,
+                      "sha256":  "c885828537811b9f3c6d28bb587207dc11191ebac6dcd3ea699ab84e7ada9270"
+                  },
+                  {
+                      "path":  "domain/internal/party/raid_camp.go",
+                      "bytes":  1999,
+                      "sha256":  "3711a83d0674752d16812accf5de37e309f8b91597cab6e5532f1f73569123b9"
+                  },
+                  {
+                      "path":  "domain/internal/party/raid_camp_test.go",
+                      "bytes":  1746,
+                      "sha256":  "b933120c34fb8a2839ac03911e825b9c50f192be47b43043ba9a7441787bd525"
+                  },
+                  {
+                      "path":  "domain/internal/party/raid_home_recovery.go",
+                      "bytes":  1965,
+                      "sha256":  "40a7c1f237ef634179d3ac3f92d636455c61f8df61bf634c6d8a465911930eee"
+                  },
+                  {
+                      "path":  "domain/internal/party/raid_projection.go",
+                      "bytes":  3862,
+                      "sha256":  "0ea6a156913b81a53e546ae2be2400eeefd00d40647058be0f440887335ea63f"
+                  },
+                  {
+                      "path":  "domain/internal/party/raid_projection_test.go",
+                      "bytes":  3003,
+                      "sha256":  "a8256f54ee389066925d3f190b051ab30c07c904e35cabaebe586157d37b9bd0"
+                  },
+                  {
+                      "path":  "domain/internal/party/raid_reentry.go",
+                      "bytes":  2163,
+                      "sha256":  "c84d9b33a4cb150e96fb352b62ee7471e29604133ac514c00b4b659a5306d6bf"
+                  },
+                  {
+                      "path":  "domain/internal/party/raid_retained.go",
+                      "bytes":  1071,
+                      "sha256":  "e0c726017e59c902b9c92b5bcb6472f1f843547a17135f34525305d9c0406a8b"
+                  },
+                  {
+                      "path":  "domain/internal/party/registry.go",
+                      "bytes":  3929,
+                      "sha256":  "4488bd8c2b001b49fe93cf4fb5faa0dd013cf2229181e89a0add3efbc80daf19"
+                  },
+                  {
+                      "path":  "domain/internal/party/registry_test.go",
+                      "bytes":  2315,
+                      "sha256":  "f6e8ef807551d5486c0f87b001b40348d473184bf47cc360e631bac082410ba2"
+                  },
+                  {
+                      "path":  "domain/internal/party/settings.go",
+                      "bytes":  2328,
+                      "sha256":  "75dd8e7c27f7bebc93b1c0ce0850aacc4a689dec99523d243d2c63f6cc0c6cb1"
+                  },
+                  {
+                      "path":  "domain/internal/party/settings_test.go",
+                      "bytes":  1705,
+                      "sha256":  "d5767425acb30c4db4ab7fcc1de36f6179368ff075f96514792d817e65ec6aa4"
+                  },
+                  {
+                      "path":  "domain/internal/party/watch.go",
+                      "bytes":  1097,
+                      "sha256":  "33045820f09cbc218be99ec04efdcb767f0f9da594bd173e9bfe3e0db0dc95f6"
+                  },
+                  {
+                      "path":  "domain/internal/party/watch_test.go",
+                      "bytes":  2960,
+                      "sha256":  "60081cc2b89cc212b91cb0e81f09f39498dbd813b4f9912a4fd1dd73fe623b76"
+                  },
+                  {
+                      "path":  "domain/internal/partywire/b823.go",
+                      "bytes":  1616,
+                      "sha256":  "7744fffecada1eb595de0e6f0e3d83100216766d1b1663e223a82533a5d6ca96"
+                  },
+                  {
+                      "path":  "domain/internal/partywire/b823_test.go",
+                      "bytes":  2030,
+                      "sha256":  "f2c279c062e1e3f933f46da4ecf4f60e60980c420364eb3089b196b2adae2bcd"
+                  }
+              ]
+}

@@ -1,0 +1,21 @@
+# Go
+/bin/
+*.exe
+*.test
+*.out
+coverage.*
+
+# 客户端 Mod 构建产物
+client/legion-party-hud/build/
+client/legion-party-hud/*.dll
+client/legion-party-hud/*.lib
+client/legion-party-hud/*.pdb
+client/native-party-gate/build/
+client/native-party-gate/*.obj
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+*.log
+Thumbs.db
+.DS_Store
