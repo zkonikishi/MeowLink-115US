@@ -19,7 +19,7 @@
 3. 锁顺序与事务：`dungeon.WithRoomCommit` 要求 **host 排序后的 auth account Lease + 完整选中集合 → run.mu → 原始 Store SQL 事务**；SQL 回调必须是短的有界操作，禁止回入 Hub / 网络 / 观察者。
 4. 幂等：以 run + room/map 为键。不要引入未经验证的 nonce 或 confirm/refund 协议。
 
-双模式（自定义模式 / 通用模式）的差异只在账号与认证接入层：域层本身不认证 socket、不编码客户端包，也不依赖 Meowopia 平台身份。
+双模式（自定义模式 / 通用模式）的差异只在账号与认证接入层：域层本身不认证 socket、不编码客户端包，也不依赖平台身份。
 
 ## 3. 客户端
 
