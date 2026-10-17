@@ -57,6 +57,10 @@ go test ./...
 - 客户端补丁只修改运行时进程内存中的显示/门控逻辑，不修改磁盘上的游戏文件。
 - 接入方式见 [`docs/integration.md`](docs/integration.md)；架构与边界见 [`docs/architecture.md`](docs/architecture.md)。
 
+## 致谢
+
+感谢群大佬「社会」提供组队源码和思路。
+
 ## 许可
 
 **非商业使用**：仅供免费技术交流与个人学习研究，禁止任何形式的商业化使用。详见 [`NOTICE.txt`](NOTICE.txt)。
