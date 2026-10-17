@@ -1,7 +1,7 @@
 package ordinary
 
 import (
-	"dfolan/internal/dungeon"
+	"meowlink/internal/dungeon"
 	"testing"
 	"time"
 )

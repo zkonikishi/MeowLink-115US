@@ -1,31 +1,31 @@
-﻿{
-    "generatedAt":  "2026-10-17T13:18:19.8731824+08:00",
+{
+    "generatedAt":  "2026-10-17T13:46:18.1504870+08:00",
     "root":  "domain",
     "files":  [
                   {
                       "path":  "domain/go.mod",
-                      "bytes":  25,
-                      "sha256":  "589049eaa3bb3ba135bc1152dd7b1058397a9c5f85af9d3b94a5e67734c2ffca"
+                      "bytes":  27,
+                      "sha256":  "83e3e6449289fcabb2a1437df0131ae438ed104bdfbe4526315bd73cf6fe53af"
                   },
                   {
                       "path":  "domain/internal/dungeon/shared.go",
-                      "bytes":  8051,
-                      "sha256":  "f4a15b83d988a9e3682c263566068cc0623a3ee38602b0f0ff1859657c71cd5d"
+                      "bytes":  8053,
+                      "sha256":  "56d4b35f119a92a5739b45b5b93796a2b497087bf88fdbcc13b0187a5747b113"
                   },
                   {
                       "path":  "domain/internal/dungeon/shared_test.go",
-                      "bytes":  4589,
-                      "sha256":  "5e7526070d57b3c96b6a03970e220397c0193f7b6eb50a0cba3a2891cf73018d"
+                      "bytes":  4591,
+                      "sha256":  "061745c3745e96dd74b7240e925ac4c1a622694c2dfb5d501fbfb95f0aed79e9"
                   },
                   {
                       "path":  "domain/internal/ordinary/service.go",
-                      "bytes":  4514,
-                      "sha256":  "2d2bf60a6f4814f2aae0bbf16c9b0d79c37dbca9e7c2b1a27ba5c2b2a9a8a9ed"
+                      "bytes":  4518,
+                      "sha256":  "97e85669cfc4173091fccbae21da427a9b5020fcbf2db2c5c8513f67a83a0bc6"
                   },
                   {
                       "path":  "domain/internal/ordinary/service_test.go",
-                      "bytes":  1582,
-                      "sha256":  "3901af7474893d31726aae344c15299bac1354408b123f727e6167305a9359f8"
+                      "bytes":  1584,
+                      "sha256":  "8931b5cb664a30291f5b00cedd7b635298bde9de071d6f9eb99aaecf1254a3bb"
                   },
                   {
                       "path":  "domain/internal/party/controlled_actors.go",

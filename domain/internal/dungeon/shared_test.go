@@ -2,8 +2,8 @@ package dungeon
 
 import (
 	"context"
-	"dfolan/internal/party"
 	"errors"
+	"meowlink/internal/party"
 	"sync"
 	"sync/atomic"
 	"testing"

@@ -5,9 +5,9 @@ package ordinary
 
 import (
 	"context"
-	"dfolan/internal/dungeon"
-	"dfolan/internal/party"
 	"fmt"
+	"meowlink/internal/dungeon"
+	"meowlink/internal/party"
 	"sync"
 	"time"
 )

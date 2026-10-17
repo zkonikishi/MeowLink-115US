@@ -5,9 +5,9 @@ package dungeon
 import (
 	"context"
 	"crypto/rand"
-	"dfolan/internal/party"
 	"encoding/hex"
 	"fmt"
+	"meowlink/internal/party"
 	"sync"
 	"time"
 )
