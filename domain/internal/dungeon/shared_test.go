@@ -32,6 +32,19 @@ func release(t *testing.T, r *SharedRun, ms []party.Lease, now time.Time) Shared
 			t.Fatal(all, e)
 		}
 	}
+	v, _ := r.Snapshot()
+	if v.Phase != SharedReady {
+		t.Fatal("readiness skipped resource gate", v.Phase)
+	}
+	if _, err := r.Kill(s.Stamp, ms[0], 1001, now); err == nil {
+		t.Fatal("combat before resource release")
+	}
+	if err := r.Release(s.Stamp, ms[1], now); err == nil {
+		t.Fatal("nonleader release")
+	}
+	if err := r.Release(s.Stamp, ms[0], now); err != nil {
+		t.Fatal(err)
+	}
 	return s.Stamp
 }
 func TestSharedBarrierAndRoomEpoch(t *testing.T) {

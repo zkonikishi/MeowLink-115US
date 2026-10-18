@@ -54,3 +54,9 @@ sha256sum domain/internal/party/hub.go
 - 不含原生协议编解码器、不认证 socket。
 - 不含上游服务端源码与游戏资源，不能单独运行成完整服务端。
 - 客户端偏移、宿主接口与游戏版本绑定，升级后必须重新验证。
+
+
+## 2026-10-18 接线更正
+
+旧快照不能作为本次更新的接线合同。当前顺序以 [domain-contract.md](domain-contract.md) 为准：Loaded → SharedReady → 宿主资源事务成功 → Release → SharedRunning。
+旧文中的 6302409 是历史源码基准，并非含后续修改的干净提交。复现请固定本 GitHub 提交及 evidence/source-provenance.json 的逐文件哈希；不能仅检出该历史提交就宣称得到同一宿主。

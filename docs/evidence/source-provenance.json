@@ -1,0 +1,75 @@
+{
+  "updatedAt": "2026-10-18",
+  "previous_public_commit": "541f7df63b356bcc7265ff9dbf3f8bd4d679cf20",
+  "historical_commit_baseline": "6302409c42f7c7c14ffbc2007c7085c946abf8ad",
+  "historical_commit_is_complete_source_identity": false,
+  "sources": [
+    {
+      "path": "domain/internal/dungeon/shared.go",
+      "origin": "meowlink-preview-r1/server/work/dfo-lan/internal/dungeon/shared.go",
+      "origin_sha256": "463573818d07345a786922a6704fb5807af38f68c78761ac7d1ade5cd58afa5d",
+      "public_sha256": "5a946698ee21d3a6ef483b1a3bc488daffc184012c6575506ef5920304e988fe",
+      "transformation": "module import dfolan/internal/ -> meowlink/internal/; LF and gofmt"
+    },
+    {
+      "path": "domain/internal/dungeon/shared_test.go",
+      "origin": "meowlink-preview-r1/server/work/dfo-lan/internal/dungeon/shared_test.go",
+      "origin_sha256": "4af4d36e0961ffd4d58a8d1e7168e49652b2f5c7906d2c065e1384496d4065d3",
+      "public_sha256": "7c3f3d5f86424986761000439efff045d629bdf39c2b8f750439b214b3dbffe9",
+      "transformation": "module import dfolan/internal/ -> meowlink/internal/; LF and gofmt"
+    },
+    {
+      "path": "domain/internal/dungeon/release_test.go",
+      "origin": "meowlink-preview-r1/server/work/dfo-lan/internal/dungeon/release_test.go",
+      "origin_sha256": "ad213caa368c3b50828118ce09469c32428b23bc9019e9e1b2fb59e65d23b8db",
+      "public_sha256": "075b0df88d5b9496f0abf8c4517260d1b5bd46ff2e6e95c7debdc91ec346df59",
+      "transformation": "module import dfolan/internal/ -> meowlink/internal/; LF and gofmt"
+    },
+    {
+      "path": "domain/internal/ordinary/service.go",
+      "origin": "meowlink-preview-r1/server/work/dfo-lan/internal/ordinary/service.go",
+      "origin_sha256": "283ae4314943b25e49829650f2dd2a85673764a4090d225c29d2a1c4c1955031",
+      "public_sha256": "6b8fe95dac1bb04ebac5dff24885ef4be626183525a9aad9a11d26ace5ce4851",
+      "transformation": "module import dfolan/internal/ -> meowlink/internal/; LF and gofmt"
+    },
+    {
+      "path": "domain/internal/ordinary/service_test.go",
+      "origin": "meowlink-preview-r1/server/work/dfo-lan/internal/ordinary/service_test.go",
+      "origin_sha256": "6b63a573837796ba3055beffc754f3bfd271feafdb6fe44f6e72d26eb67017f0",
+      "public_sha256": "ae2e7d1ef6217c90b93f506631ff43b2387892223d647ad29ec84efb57eb8d7e",
+      "transformation": "module import dfolan/internal/ -> meowlink/internal/; LF and gofmt"
+    },
+    {
+      "path": "domain/internal/ordinary/ordinary_accept_from.go",
+      "origin": "meowlink-preview-r1/server/work/dfo-lan/internal/ordinary/ordinary_accept_from.go",
+      "origin_sha256": "26d15ee18e0f7200fc13e93ce655dfe2ba68d15ebe99fec4347a5f477a7322b4",
+      "public_sha256": "be238e719f0b7c2a93a9757426c713ff00eb97b8b4b1c81f6584b28ee166040d",
+      "transformation": "module import dfolan/internal/ -> meowlink/internal/; LF and gofmt"
+    },
+    {
+      "path": "domain/internal/ordinary/ordinary_accept_from_test.go",
+      "origin": "meowlink-preview-r1/server/work/dfo-lan/internal/ordinary/ordinary_accept_from_test.go",
+      "origin_sha256": "71ea22e09149c4a81c8c9609e2117b981e829d24c999675db4cee9559c80f28e",
+      "public_sha256": "df887385864c9902039ffb02f8fe8b95ff344e47b4e06d4350b495d85dd8dfff",
+      "transformation": "module import dfolan/internal/ -> meowlink/internal/; LF and gofmt"
+    }
+  ],
+  "new_public_regression_tests": [
+    "domain/internal/ordinary/admission_regression_test.go",
+    "domain/internal/ordinary/capacity_test.go"
+  ],
+  "unchanged": [
+    "client/",
+    "NOTICE.txt",
+    "domain/internal/party/",
+    "domain/internal/partywire/"
+  ],
+  "omitted": [
+    "host and database source",
+    "player data or production configuration",
+    "game/client binaries and assets",
+    "PVF-dependent first-room producer",
+    "cross-domain tests requiring omitted upstream packages"
+  ],
+  "third_party_notice": "Existing attributions and original third-party permissions are preserved; this sync does not alter their licenses."
+}

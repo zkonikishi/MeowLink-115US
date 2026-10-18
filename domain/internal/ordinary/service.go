@@ -87,8 +87,8 @@ func (s *Service) Start(leader party.Lease, plan dungeon.OrdinaryPlan, now time.
 	s.mu.Lock()
 	defer s.mu.Unlock()
 	p, ok := s.hub.Of(leader)
-	if !ok || p.Leader != leader.Actor || len(p.Members) != 2 {
-		return dungeon.SharedSnapshot{}, fmt.Errorf("preview requires two current members and leader")
+	if !ok || p.Leader != leader.Actor || (len(p.Members) < 2 || len(p.Members) > 4) {
+		return dungeon.SharedSnapshot{}, fmt.Errorf("ordinary shared run requires two to four current members and leader")
 	}
 	if r := s.runs[p.ID]; r != nil {
 		v, _ := r.Snapshot()
@@ -160,4 +160,16 @@ func (s *Service) WithRoomCommit(ctx context.Context, leader party.Lease, stamp 
 		return fmt.Errorf("commit requires current leader")
 	}
 	return r.WithRoomCommit(ctx, stamp, members, fn)
+}
+
+// Release is trusted-host only and follows successful resource commit. It does
+// not send a native success packet or manufacture a database receipt.
+func (s *Service) Release(leader party.Lease, stamp dungeon.SharedStamp, now time.Time) error {
+	s.mu.Lock()
+	defer s.mu.Unlock()
+	r, err := s.run(leader)
+	if err != nil {
+		return err
+	}
+	return r.Release(stamp, leader, now)
 }

@@ -22,6 +22,7 @@ const (
 	SharedLoading SharedPhase = iota
 	SharedRunning
 	SharedAborted
+	SharedReady
 )
 
 type SharedSnapshot struct {
@@ -130,7 +131,7 @@ func (r *SharedRun) check(st SharedStamp, m party.Lease, now time.Time) error {
 	if !found {
 		return fmt.Errorf("stale member")
 	}
-	if r.state.Phase == SharedLoading && !now.Before(r.deadline) {
+	if (r.state.Phase == SharedLoading || r.state.Phase == SharedReady) && !now.Before(r.deadline) {
 		r.abort("loading timeout")
 		return fmt.Errorf("loading timeout")
 	}
@@ -182,15 +183,34 @@ func (r *SharedRun) Loaded(st SharedStamp, m party.Lease, now time.Time) (bool, 
 	if !r.delivered[m] {
 		return false, fmt.Errorf("map batch not written")
 	}
+	if r.state.Phase == SharedReady || r.state.Phase == SharedRunning {
+		return true, nil
+	}
 	r.loaded[m] = true
 	if len(r.loaded) == r.state.AdmissionCount {
-		r.state.Phase = SharedRunning
+		r.state.Phase = SharedReady
 		return true, nil
 	}
 	return false, nil
 }
 
 // Kill resolves one shared entity once; duplicate reports cannot mint drops.
+// Release follows a successful host resource commit. Readiness alone cannot
+// start combat. The host must retain the same selection/room guards between
+// commit and this call, or retry the identical idempotent charge before release.
+func (r *SharedRun) Release(st SharedStamp, leader party.Lease, now time.Time) error {
+	r.mu.Lock()
+	defer r.mu.Unlock()
+	if err := r.check(st, leader, now); err != nil {
+		return err
+	}
+	if leader != r.state.Leader || (r.state.Phase != SharedReady && r.state.Phase != SharedRunning) {
+		return fmt.Errorf("room not ready for leader release")
+	}
+	r.state.Phase = SharedRunning
+	return nil
+}
+
 func (r *SharedRun) Kill(st SharedStamp, m party.Lease, entity uint32, now time.Time) (bool, error) {
 	r.mu.Lock()
 	defer r.mu.Unlock()

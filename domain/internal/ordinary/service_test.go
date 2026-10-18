@@ -44,6 +44,13 @@ func TestActualHubInvitationToSharedBarrierAndDisconnect(t *testing.T) {
 	if all, e := s.Loaded(b, run.Stamp, now); e != nil || !all {
 		t.Fatal(all, e)
 	}
+	ready, e := s.Snapshot(b)
+	if e != nil || ready.Phase != dungeon.SharedReady {
+		t.Fatal("resource gate missing", ready, e)
+	}
+	if e = s.Release(a, run.Stamp, now); e != nil {
+		t.Fatal(e)
+	}
 	x, e := s.Snapshot(b)
 	if e != nil || x.Stamp != run.Stamp || x.Phase != dungeon.SharedRunning || x.AdmissionCount != 2 {
 		t.Fatal(x, e)

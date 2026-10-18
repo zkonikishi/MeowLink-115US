@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-18",
+  "module": "meowlink",
+  "go": "1.26.0",
+  "test_command": "go test ./... -count=1 -json",
+  "test_exit": 0,
+  "pass_test_events": 53,
+  "vet_command": "go vet ./...",
+  "vet_exit": 0,
+  "regressions": [
+    "three-member admission accepted",
+    "no combat before resource commit/release",
+    "Ready deadline and duplicate load behavior",
+    "2/3/4 members and independent teams",
+    "fifth online actor not admitted to full party",
+    "leader departure preserves sparse slots and cancels frozen run"
+  ],
+  "scope": "standard-library domain only; synthetic identities and content",
+  "not_verified": [
+    "authentication or SQL integration in this standalone repository",
+    "native packet supply and original client execution",
+    "two/four DFO clients",
+    "remote transport or online load"
+  ],
+  "client_or_multi_instance_build_tested": false
+}
