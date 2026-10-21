@@ -1,0 +1,110 @@
+{
+  "author": "zkonikishi",
+  "status": "source-archive-candidates-not-stable-not-deployed",
+  "files": [
+    {
+      "path": "ime-context/ime_context.c",
+      "sha256": "cdf340d8d24e573c42133adbabdea27c430a2546d73b13fbc50fe63e777f0157",
+      "bytes": 6112,
+      "author": "zkonikishi",
+      "provenance": "self-authored candidate; no upstream/native game source copied"
+    },
+    {
+      "path": "ime-context/ime_context_test.c",
+      "sha256": "0f1f24ca6bb07d9a1b7d215be86390fa0dde96a5d4a75908278dff4d5ba28fd9",
+      "bytes": 3233,
+      "author": "zkonikishi",
+      "provenance": "self-authored candidate; no upstream/native game source copied"
+    },
+    {
+      "path": "ime-context/ui_bootstrap.c",
+      "sha256": "91abc41839e09f735c12ba222e599ad066e7d0327e0c425f98583fb3af42ca76",
+      "bytes": 5545,
+      "author": "zkonikishi",
+      "provenance": "self-authored candidate; no upstream/native game source copied"
+    },
+    {
+      "path": "ime-context/ui_bootstrap_test.c",
+      "sha256": "fdf195e57a6821979d2acf03e6f9c82607cb0f6afc80ec4496def9eff2f189cd",
+      "bytes": 2461,
+      "author": "zkonikishi",
+      "provenance": "self-authored candidate; no upstream/native game source copied"
+    },
+    {
+      "path": "ime-context/build-test.cmd",
+      "sha256": "898acd2dcb9977d3193b7d24cab9b16af7cdc4da4795141aea02e8b27b9e23ae",
+      "bytes": 685,
+      "author": "zkonikishi",
+      "provenance": "self-authored candidate; no upstream/native game source copied"
+    },
+    {
+      "path": "wording-transaction/install.py",
+      "sha256": "b4b3e26e936135bbfc49805760711a80c38d645bfcf0f899d75975b2c489a67e",
+      "bytes": 3637,
+      "author": "zkonikishi",
+      "provenance": "self-authored candidate; no upstream/native game source copied"
+    },
+    {
+      "path": "wording-transaction/rollback.py",
+      "sha256": "8dfc9edf5117d4a0eb3442827adc72705fdc493f41e3eac2e05a86d169822780",
+      "bytes": 1595,
+      "author": "zkonikishi",
+      "provenance": "self-authored candidate; no upstream/native game source copied"
+    },
+    {
+      "path": "server-devcontrol/control.go",
+      "sha256": "3a5c17b2db3adcdf975086feab45d3888c80f726890ff3772a840bf7a2d65156",
+      "bytes": 20043,
+      "author": "zkonikishi",
+      "provenance": "self-authored candidate; no upstream/native game source copied"
+    },
+    {
+      "path": "server-devcontrol/control_test.go",
+      "sha256": "15c6d9a335bccd1d7f0f420146307737879dbb7f19601394946572ce1dbeac84",
+      "bytes": 14748,
+      "author": "zkonikishi",
+      "provenance": "self-authored candidate; no upstream/native game source copied"
+    },
+    {
+      "path": "server-devcontrol/lifecycle.go",
+      "sha256": "52be8e123acdedc8a843a56dd5b41339587e362ec34f0ab564461be364cfe2bd",
+      "bytes": 3433,
+      "author": "zkonikishi",
+      "provenance": "self-authored candidate; no upstream/native game source copied"
+    },
+    {
+      "path": "server-devcontrol/lifecycle_test.go",
+      "sha256": "afc5d5f3c1cc52b6ba4e31c45f9b54864dfd9646bcf6bd81d3c24d9c4f7b27d4",
+      "bytes": 2917,
+      "author": "zkonikishi",
+      "provenance": "self-authored candidate; no upstream/native game source copied"
+    }
+  ],
+  "copyright": "Self-authored additions; user authorized public source archival. Preserve receiving repository license and all existing third-party notices; no third-party relicense claimed.",
+  "validation": {
+    "source_scan": "passed explicit allowlist and secret/private-path/game-offset patterns",
+    "python_AST": "passed two tools",
+    "ime": "MSVC /W4 /WX build + fixture + actual candidate DLL hidden HWND/IMM tests passed; no game acceptance",
+    "server_devcontrol": "18 control + 2 actual-host overlay tests previously passed; no new build for archival",
+    "wording_tools": "parameterized variant syntax checked only, not executed"
+  },
+  "known_issues": [
+    "IME registered dispatch message generation is predictable; external SendMessage can trigger attach/detach. Not an authorization boundary. Do not enable before host-armed request hardening.",
+    "IME needs trusted game HWND/UI callsite. Modern IME gate, candidate closure and next composition remain unimplemented/unverified.",
+    "IME is context-only process-resident candidate, no EAT/IAT/inline/subclass patching; existing ModStart returns bootstrap_required.",
+    "Client transaction tools are wording-layer legacy text_changes=17 candidates, not general modkit; required compatibility/registry/backup files are intentionally local-only.",
+    "Client transaction tools use assert for safety guards: python -O removes checks; do not execute optimized or treat as production-safe installer.",
+    "Server devcontrol depends on separately supplied meowlink/devtest API v1; source archival does not supply a standalone build or production management session.",
+    "Server management session/RBAC/revocation host adapter unavailable; default disabled. Native/network missing evidence never passes.",
+    "Repeated C0000374 remains unresolved; private captures and crash-session data excluded."
+  ],
+  "excluded": [
+    "DLL/EXE/LIB/OBJ/EXP/PDB",
+    "raw logs, dumps, capture/session records",
+    "game/PVF/NPK/client resources",
+    "native game offsets and upstream source",
+    "player data/credentials/private domains/configuration",
+    "robot synthetic native-source reproduction"
+  ],
+  "publishing_owner": "MeowLink-115US single publisher; handoff-candidates/20261021 branch; no direct live integration"
+}
