@@ -1,0 +1,115 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "DFO115USLauncher-ModHost",
+  "version": "0.1.1",
+  "identifier": "com.tomeu.dfo115us.launcher.modhost",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "DFO-115US 启动器 · 通用 Mod 扩展候选",
+        "width": 1280,
+        "height": 720,
+        "minWidth": 960,
+        "minHeight": 540,
+        "center": true,
+        "resizable": true,
+        "visible": true,
+        "decorations": false,
+        "shadow": true
+      },
+      {
+        "label": "panel-log",
+        "title": "运行日志",
+        "width": 660,
+        "height": 440,
+        "minWidth": 340,
+        "minHeight": 200,
+        "x": 120,
+        "y": 120,
+        "resizable": true,
+        "visible": false,
+        "decorations": false,
+        "shadow": true
+      },
+      {
+        "label": "panel-mode",
+        "title": "游戏内容模式",
+        "width": 420,
+        "height": 300,
+        "minWidth": 300,
+        "minHeight": 170,
+        "x": 200,
+        "y": 200,
+        "resizable": true,
+        "visible": false,
+        "decorations": false,
+        "shadow": true
+      },
+      {
+        "label": "panel-mods",
+        "title": "客户端插件",
+        "width": 560,
+        "height": 560,
+        "minWidth": 360,
+        "minHeight": 260,
+        "x": 260,
+        "y": 240,
+        "resizable": true,
+        "visible": false,
+        "decorations": false,
+        "shadow": true
+      },
+      {
+        "label": "panel-modkit",
+        "title": "mod 安装层",
+        "width": 520,
+        "height": 380,
+        "minWidth": 360,
+        "minHeight": 220,
+        "x": 320,
+        "y": 300,
+        "resizable": true,
+        "visible": false,
+        "decorations": false,
+        "shadow": true
+      },
+      {
+        "label": "panel-memory",
+        "title": "服务端内存",
+        "width": 520,
+        "height": 620,
+        "minWidth": 400,
+        "minHeight": 300,
+        "x": 380,
+        "y": 260,
+        "resizable": true,
+        "visible": false,
+        "decorations": false,
+        "shadow": true
+      }
+    ],
+    "security": {
+      "csp": null,
+      "assetProtocol": {
+        "enable": true
+      }
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  }
+}

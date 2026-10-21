@@ -1,0 +1,705 @@
+{
+  "schema": 1,
+  "date": "2026-10-21",
+  "status": "source-only-candidate",
+  "author": "zkonikishi",
+  "upstream": {
+    "repository": "https://github.com/KinkOwO/115US-launcher",
+    "commit": "ce3dfab6533d7594ee08006899b2d57b96b1de41",
+    "license": "AGPL-3.0"
+  },
+  "checks": {
+    "runtime": 9,
+    "hostCompatibility": 14,
+    "hostUiLogic": 5,
+    "companionRust": 32,
+    "actualGoHttp": 22,
+    "actualModProcessUpdateRollback": true
+  },
+  "unverified": [
+    "native GUI visual",
+    "game login and multiplayer",
+    "cross-PC game",
+    "actual WFP"
+  ],
+  "omitted": [
+    "binary archives and EXEs",
+    "private platform integration",
+    "real configurations and credentials",
+    "player databases",
+    "raw session logs",
+    "complete server and ClientHost implementation"
+  ],
+  "files": [
+    {
+      "path": "launcher/generic-host/.gitignore",
+      "sha256": "71dd8f7bc8b9599d9c9a29ea5796caef0555bd277fe7861f5348ec38e9343dbc",
+      "bytes": 662
+    },
+    {
+      "path": "launcher/generic-host/.npmrc",
+      "sha256": "dddd0205b3be6457c59b922c291cfc599477f6544262b10f53a1e058faa72259",
+      "bytes": 41
+    },
+    {
+      "path": "launcher/generic-host/.vscode/extensions.json",
+      "sha256": "cc7476def213e1bb55aab9a7a5dc38214c8f60ca1b8fd0be22980aa580e91533",
+      "bytes": 83
+    },
+    {
+      "path": "launcher/generic-host/BUILD-ModHost.ps1",
+      "sha256": "470c7c6dfaa2863520c0e96715349d62130dd23df20655e6a541e1788b9b2df2",
+      "bytes": 1095
+    },
+    {
+      "path": "launcher/generic-host/CHANGELOG.md",
+      "sha256": "d8d30ce31150db6cda7082307c2f131b99b6b22e0e226f26d737f0aec5e403e6",
+      "bytes": 12484
+    },
+    {
+      "path": "launcher/generic-host/docs/launcher-mod-v1.json",
+      "sha256": "6528acee5d2ac07835c1b369282864c21988c438186fe116bdf2f4283c0c68f8",
+      "bytes": 3507
+    },
+    {
+      "path": "launcher/generic-host/index.html",
+      "sha256": "8ffbd4998a8b713cef4624a9c521297f87aee66c80020ef9ddb2fa3e7de6e162",
+      "bytes": 329
+    },
+    {
+      "path": "launcher/generic-host/LICENSE",
+      "sha256": "6f1e622c82a380075843bb084a7ec3b1f1d12a4a02526d75e78b0924a860aa75",
+      "bytes": 35184
+    },
+    {
+      "path": "launcher/generic-host/package-lock.json",
+      "sha256": "db9b1c839cbbee0c4c6b77f6aefdd03d3b3c2ac24b21bea9605d371ff1c8cebd",
+      "bytes": 38005
+    },
+    {
+      "path": "launcher/generic-host/package.json",
+      "sha256": "10f5bbf75a69ed403a10c6a800a5b4f89daa6e1131b71a9e09836119235fa97f",
+      "bytes": 715
+    },
+    {
+      "path": "launcher/generic-host/README.md",
+      "sha256": "d76606787c6efebcd440448883557d1f2b2e52be7d451a1293f306554b6ab311",
+      "bytes": 15103
+    },
+    {
+      "path": "launcher/generic-host/sandbox/cases.ts",
+      "sha256": "051f84aec348cb0427a09ddaee84b3b0ace705c0b952626d6b5cd933adf0a639",
+      "bytes": 17800
+    },
+    {
+      "path": "launcher/generic-host/sandbox/data.ts",
+      "sha256": "0bb9906a3b2ac21b11ef8d54c1855ba10c625efc6e0a239827b28c30c7491520",
+      "bytes": 8584
+    },
+    {
+      "path": "launcher/generic-host/sandbox/driver.ts",
+      "sha256": "11705835905d1ded9ad13f78584089b26229871b7136b4e28f926e2729f2586d",
+      "bytes": 13826
+    },
+    {
+      "path": "launcher/generic-host/sandbox/env.d.ts",
+      "sha256": "424faf9241dd699dda995b367ed36665732da1e6ec1f33b2fd40394488ecac92",
+      "bytes": 39
+    },
+    {
+      "path": "launcher/generic-host/sandbox/fixtures/bg-bright.svg",
+      "sha256": "e3d6de33a4cb101a5e2c1ffe109f2645ea588e095087aec4289e035052528bc8",
+      "bytes": 1078
+    },
+    {
+      "path": "launcher/generic-host/sandbox/fixtures/bg.svg",
+      "sha256": "b8d91ebb1345c32738eb5fc478103472246e583604e81d0c70a2abf3ad518fd2",
+      "bytes": 955
+    },
+    {
+      "path": "launcher/generic-host/sandbox/index.html",
+      "sha256": "a9ced31bd5ec3088c5e1dd43060e10623f3e65e8964ffc5faa0b369661feec78",
+      "bytes": 1226
+    },
+    {
+      "path": "launcher/generic-host/sandbox/main.tsx",
+      "sha256": "6d998bd67ca218076b1311b00eb2780835480eefc7a9f06c321eb1c7518e17d7",
+      "bytes": 8917
+    },
+    {
+      "path": "launcher/generic-host/sandbox/panel.tsx",
+      "sha256": "9628b442b32f31f1a878bbec155be39a9a6b6cd50e0bb9463d077a6728e1336f",
+      "bytes": 5205
+    },
+    {
+      "path": "launcher/generic-host/sandbox/probe.ts",
+      "sha256": "6868e735f852aa24af6fc1fc5447469df8113a9fe5e284ff22ce40e5d37501f9",
+      "bytes": 16675
+    },
+    {
+      "path": "launcher/generic-host/sandbox/scenarios.ts",
+      "sha256": "231b89629e5de79e9b12db14209ad467b4dec984bf4b8696143aca3782a763d5",
+      "bytes": 13809
+    },
+    {
+      "path": "launcher/generic-host/sandbox/sim.ts",
+      "sha256": "d338bacc168c96dcccf17539a380d20be08c398119d2c2073f32d310f3ec07fd",
+      "bytes": 22318
+    },
+    {
+      "path": "launcher/generic-host/sandbox/tauri/core.ts",
+      "sha256": "82e99e67f1948f8ac3255f4fe4a67af227b3520a56343704428a4921f28e2e3c",
+      "bytes": 644
+    },
+    {
+      "path": "launcher/generic-host/sandbox/tauri/event.ts",
+      "sha256": "ab945324eb0ba20971160ddf99471e833da9c3926b7a94e515901bb5a9c04235",
+      "bytes": 746
+    },
+    {
+      "path": "launcher/generic-host/sandbox/tauri/window.ts",
+      "sha256": "155e570e02af520171a336452bd897558087dd5e1aea1b2f8c601030b342b05a",
+      "bytes": 1994
+    },
+    {
+      "path": "launcher/generic-host/src/App.tsx",
+      "sha256": "daf8c45d3ca3f44f97e1a4add0a7371f11688817e8c9beb82afe05e040f0518e",
+      "bytes": 26179
+    },
+    {
+      "path": "launcher/generic-host/src/bridge.ts",
+      "sha256": "aee9c3fa2fbbff504cba6d0516a7197aa4ee5dd69abe8191085435a1df30da99",
+      "bytes": 18503
+    },
+    {
+      "path": "launcher/generic-host/src/components/BackgroundLayer.tsx",
+      "sha256": "4c21b50e6d7749e97ee754b828c55b8630397ad68096ddc176b1429e005cd2da",
+      "bytes": 3567
+    },
+    {
+      "path": "launcher/generic-host/src/components/Dock.tsx",
+      "sha256": "272b492cc7889070eb78fde9e3665b4e0f761de93daae22f34a504f4d39ef50b",
+      "bytes": 11601
+    },
+    {
+      "path": "launcher/generic-host/src/components/FeedbackPage.tsx",
+      "sha256": "e8bb765a886f07a1d7f7871fd6e0c78b28a6d173e2b311172a906da2a17aa88b",
+      "bytes": 21629
+    },
+    {
+      "path": "launcher/generic-host/src/components/GlassDefs.tsx",
+      "sha256": "d6407f698b32cb3c0cb91cb62f7f98efc631d9d3368646412dc81d3e89e7d73e",
+      "bytes": 1361
+    },
+    {
+      "path": "launcher/generic-host/src/components/icons.tsx",
+      "sha256": "20e951fb2b46b32193c3a86391011230b592c0e35b8cae590f34635f88041324",
+      "bytes": 6795
+    },
+    {
+      "path": "launcher/generic-host/src/components/LaunchDock.tsx",
+      "sha256": "d1ed03434b967fef65be12b3db669a6a15929681fec4ce8a769c7d52773f81b5",
+      "bytes": 8334
+    },
+    {
+      "path": "launcher/generic-host/src/components/LauncherMods.tsx",
+      "sha256": "03641441ad4ec61761e3856d592b122cb87d3f4c4da566280088d8fdc20df6cd",
+      "bytes": 4381
+    },
+    {
+      "path": "launcher/generic-host/src/components/LogConsole.tsx",
+      "sha256": "da236256757cad8ca7c7ffd414f84876a37de0c91384e23512fe3f13e2a7e5e2",
+      "bytes": 1703
+    },
+    {
+      "path": "launcher/generic-host/src/components/MemoryCard.tsx",
+      "sha256": "9482be39e9910204c2b2c7105495979235966c2c18295419426c252f760ecc94",
+      "bytes": 11330
+    },
+    {
+      "path": "launcher/generic-host/src/components/ModePanel.tsx",
+      "sha256": "0bfb526d8c62189de3cd7538844f286e4516e430683dcbd9b0da6e4b02531c02",
+      "bytes": 1840
+    },
+    {
+      "path": "launcher/generic-host/src/components/ModkitPanel.tsx",
+      "sha256": "ea4ad44c52ce55991072cf225eb798e822c2835785fc71eac298543e1d44f9e0",
+      "bytes": 3460
+    },
+    {
+      "path": "launcher/generic-host/src/components/ModsPage.tsx",
+      "sha256": "785bd6307dd5e3caf90844eba765f57cdc80e89bca202d85c13437e65e78aac6",
+      "bytes": 7164
+    },
+    {
+      "path": "launcher/generic-host/src/components/ModsPanel.tsx",
+      "sha256": "8bec41fc20861acbfea3192c060f3f40886b3a2c253bc85d1b1e3d72e95b6fd3",
+      "bytes": 12434
+    },
+    {
+      "path": "launcher/generic-host/src/components/PanelFrame.tsx",
+      "sha256": "ecff3f592a15b03851757667a023448bb1f10b39729fcf84ff5ca592a8514e12",
+      "bytes": 3976
+    },
+    {
+      "path": "launcher/generic-host/src/components/panels.tsx",
+      "sha256": "124826749426e3b9cde5bcf4894008790f12f49a027a6844e69fedead2211b5c",
+      "bytes": 1029
+    },
+    {
+      "path": "launcher/generic-host/src/components/QuitSheet.tsx",
+      "sha256": "475a62a8cfcf33e917ddd20a94f79aef7c2e4330d53b1f2a3057479a369d350a",
+      "bytes": 2154
+    },
+    {
+      "path": "launcher/generic-host/src/components/Rail.tsx",
+      "sha256": "ca5e0a55f021539bac36a1c7d3a280e9105bd5c2b4b4fd7b850097b2764cf5bd",
+      "bytes": 3890
+    },
+    {
+      "path": "launcher/generic-host/src/components/ReportConsentSheet.tsx",
+      "sha256": "219e87f5f39b1b7c9d3e74514e5cb7b8b4643329375b5047a27d8f7d0b598db2",
+      "bytes": 2464
+    },
+    {
+      "path": "launcher/generic-host/src/components/ReportSheet.tsx",
+      "sha256": "5a205d8c6bede541f650a2a66252e314550b856072060f21556a06aa85cbfd26",
+      "bytes": 5672
+    },
+    {
+      "path": "launcher/generic-host/src/components/SavesPage.tsx",
+      "sha256": "784a4a326f61806bec46b447c36b158b2324b360ec7437a349494206366bf670",
+      "bytes": 10474
+    },
+    {
+      "path": "launcher/generic-host/src/components/SettingsPage.tsx",
+      "sha256": "08ba493ef10b95f8e60c139a6746abc132bf7ea88287f821d9a58aa5dabd3ac6",
+      "bytes": 10793
+    },
+    {
+      "path": "launcher/generic-host/src/components/ToolsPage.tsx",
+      "sha256": "b3831c50184ef7d51cc44700c6cc6b82e1b12996a8d9e1fc3ecb0fbc66484126",
+      "bytes": 23959
+    },
+    {
+      "path": "launcher/generic-host/src/components/WindowControls.tsx",
+      "sha256": "05e8ee1fc71ce4c2129f4f05bcb49669c2418d0073b2ecfeb17a276ab9ef0c65",
+      "bytes": 2143
+    },
+    {
+      "path": "launcher/generic-host/src/dock.ts",
+      "sha256": "a9fec24aaa91730c371a48f7ea6f836b1acc916f03f784f19d788a6a31154d5a",
+      "bytes": 6056
+    },
+    {
+      "path": "launcher/generic-host/src/glide.ts",
+      "sha256": "72d22f6fba895351c396aaa4aff9382c23c4d3cf21055ed91c80762c5a99cd8e",
+      "bytes": 9285
+    },
+    {
+      "path": "launcher/generic-host/src/main.tsx",
+      "sha256": "3f31e8596fe862dd2147fe20b9431aa83d936ebfcfb83fba575214a573d88383",
+      "bytes": 601
+    },
+    {
+      "path": "launcher/generic-host/src/PanelApp.tsx",
+      "sha256": "ebacb4edab842c7686c0f346902df0b7e41bcedb9be86971b655f5ca73d3c798",
+      "bytes": 1723
+    },
+    {
+      "path": "launcher/generic-host/src/styles.css",
+      "sha256": "797936f6e6fc194c92adcfbd7790098b95de43095d62b4dbe281f344dd97c323",
+      "bytes": 89161
+    },
+    {
+      "path": "launcher/generic-host/src/theme.ts",
+      "sha256": "d692e76c72013fc33907f21372dc37ada4e6b4c838946269354d8807a616ca52",
+      "bytes": 2778
+    },
+    {
+      "path": "launcher/generic-host/src/useLogLines.ts",
+      "sha256": "67ebfc930a3d44b464f4184548da420bd456230d25b036df0550f605896685d7",
+      "bytes": 1205
+    },
+    {
+      "path": "launcher/generic-host/src/vite-env.d.ts",
+      "sha256": "424faf9241dd699dda995b367ed36665732da1e6ec1f33b2fd40394488ecac92",
+      "bytes": 39
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/.gitignore",
+      "sha256": "e1b11c0407131ad35a1f11d8ec2545c53de147a76f05e264e5b500a14b977332",
+      "bytes": 173
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/build.rs",
+      "sha256": "916023cf88718a1a3ba4abce52cd27f3350d415bd38f5199cec085c08ccdcbc4",
+      "bytes": 1921
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/capabilities/default.json",
+      "sha256": "9ff57c332227acf8ff69d777183494f57a183358b27c3629fdf6e1e1abb8531f",
+      "bytes": 789
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/Cargo.lock",
+      "sha256": "2a722bc3699f014ce1deb0bbe3c50ce8ab41fb646bdee218fcd571dde841a2f8",
+      "bytes": 130733
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/Cargo.toml",
+      "sha256": "ef64020bed44d1f76b9979ed19235eec45412f74667ecf098ee8224cfa47915d",
+      "bytes": 1958
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/icons/128x128.png",
+      "sha256": "76cc88b6ba871cbdb2fc67928f8b8bd93c3a1604fad3d2a41353dd223ff10b2d",
+      "bytes": 15894
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/icons/128x128@2x.png",
+      "sha256": "1d4844858187edfb3ba050060307349421dcdf09b60762eae8d18144867c5b4a",
+      "bytes": 53288
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/icons/32x32.png",
+      "sha256": "d305e1b0743d5e79c435ce8a961df7df3b9a34f098b9c2030eefe8dcec55127e",
+      "bytes": 1726
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/icons/64x64.png",
+      "sha256": "45976f5fdd770f0763c057cf72ccce459ce05beadbf3bb0a3c97b5b839588052",
+      "bytes": 4906
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/icons/icon.icns",
+      "sha256": "43de3976c34c56a5ea74cb65dba79db04cd4e3dce6cdd95dd89137f9560347dc",
+      "bytes": 1035572
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/icons/icon.ico",
+      "sha256": "9e2c903a7b8a7d3ae4f4942e6bc2ff05844073a773d4c39fba4a95924ce62960",
+      "bytes": 65175
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/icons/icon.png",
+      "sha256": "f1fd7d4c4f740e41d71802c9e74278756814b673db7273d6de2c620bd52c26c1",
+      "bytes": 180462
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/icons/Square107x107Logo.png",
+      "sha256": "6f0c8046192f83a8ccbce09b486aa7cf92933fa137e8188d2da38623a8cea7f2",
+      "bytes": 11583
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/icons/Square142x142Logo.png",
+      "sha256": "e035d5d730fc284855c586388ee0b8e153b1dbc359162a4648bc1c2425f545f2",
+      "bytes": 18901
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/icons/Square150x150Logo.png",
+      "sha256": "ae8eaf47292f0ac333a9879761b8ae591371dc1e4ced3ec1714b44cac3485fed",
+      "bytes": 20798
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/icons/Square284x284Logo.png",
+      "sha256": "ee66312ea01fe3b458b22a0862954545c56a7077d14139b82c5ca72e3cc550e0",
+      "bytes": 64173
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/icons/Square30x30Logo.png",
+      "sha256": "79e6729f52fb8863ffe5f1aaee6c780e001bcfe49b1b0d03c17e8c11601db97f",
+      "bytes": 1554
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/icons/Square310x310Logo.png",
+      "sha256": "c8b800cc70f5c11f9b62425392847a0d24cd7ec3e0544c2bea6e4b6161ca088e",
+      "bytes": 75077
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/icons/Square44x44Logo.png",
+      "sha256": "a0620aaeed9ca3d108fcc12837052f4e6ba2847740dcec1c784d79e883a056b8",
+      "bytes": 2745
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/icons/Square71x71Logo.png",
+      "sha256": "f38b189de2faf193aa6557fa8cc19eda32e817e7e6a32136dbf8d4e198122bf1",
+      "bytes": 5824
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/icons/Square89x89Logo.png",
+      "sha256": "d40b48eee72fa5bed1420c1adecc9fd28cc1a9e09c67a15c44db915d246b963b",
+      "bytes": 8516
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/icons/StoreLogo.png",
+      "sha256": "d00da8ca1ccdeee7637a80eb6c6213e7068345638a4bd5c84a40113e1657fbff",
+      "bytes": 3342
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/launcher-mod-runtime/Cargo.lock",
+      "sha256": "dbd5e6dda6c77d9eb7f02cdd04b5b5a97c065360f8801aa07adf8ea1b8cde263",
+      "bytes": 8780
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/launcher-mod-runtime/Cargo.toml",
+      "sha256": "4bc12c0b4c1f6f41c4ad39586478406dddbc8b88b8db27382c5dc3b61712e61d",
+      "bytes": 477
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/launcher-mod-runtime/src/bin/mod-package-verify.rs",
+      "sha256": "6d1e915d8dc0cfccbee27e3ad85474b4c8ccdf81587b9d9a2fe0683e4c0f81d9",
+      "bytes": 7944
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/launcher-mod-runtime/src/lib.rs",
+      "sha256": "d16fe99c6d28d00f94a884c4ae52ab2c43f3dcc82f84b301947bbee51d814fff",
+      "bytes": 172
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/launcher-mod-runtime/src/package.rs",
+      "sha256": "e210709947d9b879529b4feebcbccca6cfbb53dbba7cb73be43ddda4d5a5e18b",
+      "bytes": 23126
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/launcher-mod-runtime/src/process.rs",
+      "sha256": "0f1385c123746da3cbafea7ee216c2579e0c5b28ddf7a543e27f21e4501ddcde",
+      "bytes": 17884
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/src/autofire.rs",
+      "sha256": "196c96b0a76817c6741987995feb9f081716b64648358e5e2873bda93cd0b990",
+      "bytes": 57569
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/src/background.rs",
+      "sha256": "c97cd30fefb5802a890d30a28cfd4c683314963c7511b3a1c007ff62a1647a12",
+      "bytes": 17626
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/src/commands.rs",
+      "sha256": "68ad003b711b0b97e44369bdc6f1435ce60fe5ccf746b6e5297d911110c08d6b",
+      "bytes": 41644
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/src/config.rs",
+      "sha256": "51f8abac2d14d845c0f6260f98ceaf58c0cd4e9f2972c572b6a41dd431804738",
+      "bytes": 26068
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/src/health.rs",
+      "sha256": "c3b2daecaab25f972075eb7e59e116dafeb0e80b2a5a936e25622fda2d431244",
+      "bytes": 7727
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/src/launcher_mods.rs",
+      "sha256": "e5727134036e5e71264b70dd4f977310e0f1316def6a634a05f7b326a7e2068d",
+      "bytes": 7665
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/src/lib.rs",
+      "sha256": "ea2e81133cfecc2be6cb04b0bb32a0a31db852807315918e602f267b35d5357f",
+      "bytes": 11950
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/src/logbus.rs",
+      "sha256": "6d42396914c5d516dc7ea095c9ac030013e231c7bc410946be4e643b691e412d",
+      "bytes": 4359
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/src/main.rs",
+      "sha256": "ad219933cb74e9071b2e6182ec2849b33e2f42ba18bc3ed7c596784ceed0d847",
+      "bytes": 193
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/src/memory.rs",
+      "sha256": "22a6d565470cc8c6392f08401a7de2e607a05a72650b44f28cea3f87d314dbc7",
+      "bytes": 16019
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/src/mods.rs",
+      "sha256": "1401eecf143ea3dba798b4ad0dd674bf3d640e4055df7f380af3ae7f79ef5ebf",
+      "bytes": 79909
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/src/panels.rs",
+      "sha256": "4d2b16c1bc1f03536b6b284c8569714da354054c3daa880d99de5124a4bd7520",
+      "bytes": 10190
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/src/paths.rs",
+      "sha256": "e8a3d1f05363adb00d2281fefaac73bec88b946252356cb04f9289a9ac49c1a7",
+      "bytes": 8200
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/src/portguard.rs",
+      "sha256": "cc0549a712640fd795ee91e1694220286c5caeb5279e25658d523ba75b3a3e83",
+      "bytes": 6992
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/src/ports.rs",
+      "sha256": "ce321f2563327c53ca9598666cf60760b533027a5597c08525ac0c38b3002685",
+      "bytes": 4648
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/src/procutil.rs",
+      "sha256": "ac089b39aa83b82bfc32a6df29f07195a8b5950b63812086478edd0f1ba5fca9",
+      "bytes": 9239
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/src/report.rs",
+      "sha256": "89f7111f27ea3e95c04591d51fed649c58c5a3951b1cb201c4cecfb9ed6c4c82",
+      "bytes": 30049
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/src/saves.rs",
+      "sha256": "94f85998727cc595392f3526c98fef60427f8c8554e54fec9bbf45abd5fb4e11",
+      "bytes": 29653
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/src/self_updater.rs",
+      "sha256": "7bc1dcedaa646086e48315868db63c125a2984529764664bfcc8d8baaee67367",
+      "bytes": 7708
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/src/session.rs",
+      "sha256": "60b76ffd6bd9dff02602914eac2a2ab3a9df5daa1442e1ce9eca69fce19edeb4",
+      "bytes": 44070
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/src/site.rs",
+      "sha256": "2f3908ba5d185e1496659146e58f1302f702d8070129835f1c35b3003b35bda7",
+      "bytes": 13943
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/src/updater.rs",
+      "sha256": "a9362b0595b14f3d70fe789b0985af4270007cd92b1d66afc8556af2f2739840",
+      "bytes": 22700
+    },
+    {
+      "path": "launcher/generic-host/src-tauri/tauri.conf.json",
+      "sha256": "00a0db3514e14296eadec1ae7abe782ac31261037d94cbad243084a23895ff42",
+      "bytes": 2729
+    },
+    {
+      "path": "launcher/generic-host/tests/launcher-mods-ui.test.cjs",
+      "sha256": "ed4a22b8419d04177017c50a6d3d210fd06c74c026412c7be20fc6a66b863dd5",
+      "bytes": 4195
+    },
+    {
+      "path": "launcher/generic-host/tsconfig.json",
+      "sha256": "9671b50541bcb0112d8914cf5f82c838fcaaa25bc3f14ab90cf40a49e929224e",
+      "bytes": 614
+    },
+    {
+      "path": "launcher/generic-host/tsconfig.node.json",
+      "sha256": "3c9f4d9d366abbee437fbb06a3e950aa9e92df7d5ba47486420e662a5885c748",
+      "bytes": 249
+    },
+    {
+      "path": "launcher/generic-host/tsconfig.sandbox.json",
+      "sha256": "e3d457bd4ecf0515bc24e62dec21457f82d7472bbda8898a34c0c209d766ddbf",
+      "bytes": 532
+    },
+    {
+      "path": "launcher/generic-host/vite.config.ts",
+      "sha256": "647d31427695725417578522e1734643cf3311d0ebda51e2d4c2f9887269a844",
+      "bytes": 891
+    },
+    {
+      "path": "launcher/generic-host/vite.sandbox.config.ts",
+      "sha256": "3f0569cbe7100e26e24281c4f81a2634beb0a1b17d2987184ffcf9f74a5ca28c",
+      "bytes": 910
+    },
+    {
+      "path": "launcher/meowlink-mod/Cargo.lock",
+      "sha256": "fe1dd92bfdf16d5e8708d7d516f7683878bc096309822d258712cb3a75884d49",
+      "bytes": 13018
+    },
+    {
+      "path": "launcher/meowlink-mod/Cargo.toml",
+      "sha256": "3fd823cd91ccf65a056500c573eb18fad9108476a1cfc3c9ff4d34e63aa2ddab",
+      "bytes": 585
+    },
+    {
+      "path": "launcher/meowlink-mod/LICENSE",
+      "sha256": "6f1e622c82a380075843bb084a7ec3b1f1d12a4a02526d75e78b0924a860aa75",
+      "bytes": 35184
+    },
+    {
+      "path": "launcher/meowlink-mod/README.md",
+      "sha256": "1a6738f4ef4dabe5168a24e0e71ed5ffa991c31b50fca9528ef08ea30733d4ac",
+      "bytes": 1789
+    },
+    {
+      "path": "launcher/meowlink-mod/src/client_host.rs",
+      "sha256": "34d4d0d8c6f9a4721a88a9dc3ad69f39e5cfd34da8f5df6211a956c899f48f65",
+      "bytes": 16451
+    },
+    {
+      "path": "launcher/meowlink-mod/src/generic.rs",
+      "sha256": "18b75da92a5599cf0fb7ca100289f48ef0ff96c0d44624b13af2b161e92e88df",
+      "bytes": 16263
+    },
+    {
+      "path": "launcher/meowlink-mod/src/generic_bridges.rs",
+      "sha256": "c9a7e123469cec19eadb73f43f98115f1df7be1e571c0038f72ea136a7fbf388",
+      "bytes": 23030
+    },
+    {
+      "path": "launcher/meowlink-mod/src/generic_target.rs",
+      "sha256": "3f8440a1fb4129277868ef4e8106155cedeb11e934bd24baf85749b0cef4ffad",
+      "bytes": 14021
+    },
+    {
+      "path": "launcher/meowlink-mod/src/lib.rs",
+      "sha256": "db4911c93847518fffdeac1c6caf8c09fd1f18bbc33379becce046926d714568",
+      "bytes": 2969
+    },
+    {
+      "path": "launcher/meowlink-mod/src/main.rs",
+      "sha256": "2a22caa5463c284ea994ddcd357b77cd5c87eeeb81a16e105991b7eacf8b17ba",
+      "bytes": 4779
+    },
+    {
+      "path": "launcher/meowlink-mod/src/native.rs",
+      "sha256": "85616f03ee94622aa3554495c768663cf23b3fe985da785efd6aaf1aa4826a1e",
+      "bytes": 9323
+    },
+    {
+      "path": "launcher/meowlink-mod/src/server_settings.rs",
+      "sha256": "b879431161b6e4726f25e681a1b241e0ddcd3aebdfbede88e32870abc20b1838",
+      "bytes": 4166
+    },
+    {
+      "path": "launcher/meowlink-mod/src/web.rs",
+      "sha256": "8f0797439206c9f8c42db808c4f469a46474fb9ac1b2420ad541ed8b25e27114",
+      "bytes": 19207
+    },
+    {
+      "path": "launcher/meowlink-mod/tests/actual_go_gateway_test.go",
+      "sha256": "70770b7c0da3c24acdffdd1b22d6fb84e3b70d8961744dc08008531d645bf4f8",
+      "bytes": 3491
+    },
+    {
+      "path": "launcher/meowlink-mod/tests/http_smoke.py",
+      "sha256": "a051e183c79fc3ebf8c9edf4612e8b17bdcb9bb14f11b2765faad6c628f01b96",
+      "bytes": 9733
+    },
+    {
+      "path": "launcher/meowlink-mod/tests/ui.test.cjs",
+      "sha256": "db18fdcd6772cc07a9d374184ae40e608b4f73664b6b0862896619ea0dd5c8a5",
+      "bytes": 3697
+    },
+    {
+      "path": "launcher/meowlink-mod/web/app.js",
+      "sha256": "6b1cb0243064060d8656f747b1d4eaa23b5cabd8da884e1caf8be66cf44dc08e",
+      "bytes": 4454
+    },
+    {
+      "path": "launcher/meowlink-mod/web/index.html",
+      "sha256": "8055c39b56f49ec5a74861c00b0f19dbea773cb1f406038f05bc99aae835bbe4",
+      "bytes": 5093
+    }
+  ]
+}

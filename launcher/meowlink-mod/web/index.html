@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="meowlink-access" content="{{ACCESS_TOKEN}}"><title>MeowLink Mod 配置</title>
+<style>
+:root{color-scheme:dark;font:15px/1.6 system-ui,"Microsoft YaHei",sans-serif;background:#11151b;color:#e4eaf3}*{box-sizing:border-box}body{max-width:1120px;margin:32px auto;padding:0 24px}h1{margin:0;font-size:26px}p{color:#aebbd0}section{background:#1b212b;border:1px solid #343e4e;border-radius:14px;padding:24px;margin:20px 0}h2{font-size:18px;margin:0 0 16px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}label{display:flex;flex-direction:column;gap:6px;color:#c8d3e3}input{width:100%;background:#10151d;border:1px solid #47576c;border-radius:7px;color:#edf2fa;padding:11px;font:inherit}input:focus{outline:2px solid #efba50}small{color:#97a8c0}.wide{grid-column:1/-1}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}button{border:1px solid #66758a;background:#29384c;border-radius:8px;color:#edf2fa;padding:9px 18px;font:inherit;cursor:pointer}button.primary{background:#f4bd4d;color:#141821;border-color:#f4bd4d}button:disabled{opacity:.45;cursor:default}#notice{white-space:pre-wrap;padding:14px;border-left:3px solid #efba50;background:#1b212b;min-height:52px}#identity{color:#8fe0bb}details{margin-top:18px}summary{cursor:pointer}.note{color:#e5be74}.status{display:flex;gap:20px;flex-wrap:wrap}@media(max-width:700px){.grid{grid-template-columns:1fr}.wide{grid-column:auto}body{padding:0 14px;margin:20px auto}section{padding:18px}}
+</style><script src="/app.js" defer></script></head><body>
+<h1>MeowLink Mod 配置</h1><p>作者：zkonikishi · 通用模式 · 独立伴随页面</p>
+<p class="note" id="integrationNotice">可独立运行，也可由支持通用扩展接口的启动器在 Mod 栏载入。连接目标由下方服务器地址决定，本机 127.0.0.4 仅用于游戏桥接。</p>
+<div id="notice" role="status" aria-live="polite">正在读取配置…</div>
+<section><h2>服务器配置</h2><div class="grid" id="settings">
+<label>服务器 IP / 域名<input id="host" autocomplete="off" placeholder="本机 127.0.0.1 / 局域网 IP / 远程域名"></label>
+<label>认证端口<input id="port" type="number" min="1" max="65535" placeholder="服主提供的通用模式端口"></label>
+<label class="wide">TLS 服务器名称<input id="serverName" placeholder="证书中的 DNS 名称或 IP"></label>
+<label>Authority ID<input id="authorityId" placeholder="服主提供的身份域"></label>
+<label>Realm ID<input id="realmId" placeholder="服主提供的服务器域"></label>
+<label>Save Profile ID<input id="saveProfileId" placeholder="服主提供的存档域"></label>
+<label>CA 证书绝对路径（DER，可选）<input id="caCertificate" placeholder="使用公共 CA 时留空"></label>
+<label class="wide">服主频道描述文件（绝对路径）<input id="playerTargetFile" placeholder="D:\MeowLink\player-target.json"></label>
+<label class="wide">MeowClientHost.exe（绝对路径）<input id="hostExecutable" placeholder="使用经核验的客户端宿主"></label>
+<label class="wide">游戏客户端目录（绝对路径）<input id="clientDirectory" placeholder="包含 DFO.exe 的目录"></label>
+</div><div class="actions"><button id="save" class="primary">保存配置</button><button id="check">校验配置与连接</button></div>
+<small>服务器 IP 可以与 TLS 名称不同；证书仍必须匹配 TLS 名称。配置保存后会清除当前账号会话。只接入服务端显式开启的通用模式，不会回退到私有平台或本地账号。</small></section>
+<section><h2>目标服务端账号</h2><div class="grid"><label>用户名<input id="username" autocomplete="username" maxlength="32"></label><label>密码<input id="password" type="password" autocomplete="current-password" maxlength="72"></label></div>
+<div class="actions"><button id="register">注册</button><button id="login" class="primary">登录</button><button id="logout">退出账号</button></div><p id="identity">未登录</p>
+<div class="actions"><button id="start" class="primary" disabled>通过 MeowLink 启动游戏</button><button id="stop" disabled>停止 MeowLink 实例</button></div><p id="instance">尚未启动游戏</p>
+<small>账号认证成功与游戏进服是两个阶段。游戏启动需要严格隔离宿主及管理员权限；客户端版本不匹配会拒绝启动。请勿同时使用原启动器的本地“开始游戏”，避免桥接端口冲突。</small></section>
+<section><h2>使用说明</h2><p>先向服主取得通用模式 IP、端口、证书名称、身份域和频道描述文件，再保存并校验。注册或登录后，使用本页的 MeowLink 启动入口。</p><p>关闭浏览器标签页不会停止连接程序。停止实例只处理本程序创建的宿主与桥接；程序不会安装 DLL、修改原启动器或访问玩家数据库。</p><div class="actions"><button id="quit">停止实例并退出配置程序</button></div></section>
+</body></html>

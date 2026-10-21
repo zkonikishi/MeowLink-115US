@@ -1,0 +1,37 @@
+{
+  "schema": "launcher-mod-host-contract-v1",
+  "maintainer": "zkonikishi",
+  "packageManifest": "launcher-mod.json",
+  "manifestSchema": "launcher-mod-package-v1",
+  "processProtocol": "launcher-mod-http-v1",
+  "import": {
+    "input": "An explicitly selected, already extracted local directory. Host does not extract ZIP/RAR archives.",
+    "trust": "Unsigned v1 candidates require explicit source/digest review and approval. Digest integrity is not publisher authentication. Unsupported signature fields are rejected, never silently accepted.",
+    "limits": "64 KiB manifest, <=256 declared files, <=128 MiB total; package IDs use lowercase ASCII letters/digits/hyphens; three-component numeric versions.",
+    "validation": "Closed file list and SHA256 per resource; reject symlinks/reparse points, traversal, ADS/device names, duplicate case aliases, unknown schema/protocol/capabilities.",
+    "approvalBinding": "One-use main-window ticket binds chosen source, package ID and manifest digest. Revalidate all bytes before import and execution. No auto-execution on import."
+  },
+  "capabilities": {
+    "settings.http": "Required. Own local HTTP configuration page.",
+    "native-game-child": "Optional declaration for game child processes. Native code is explicitly trusted; declarations and a Job do not constitute an OS filesystem/network sandbox."
+  },
+  "runtime": {
+    "arguments": ["--launcher-mod", "--root", "<separate per-package data directory>"],
+    "environment": "Only standard OS environment variables are inherited; no launcher-specific platform credentials.",
+    "readyStdout": "LAUNCHER_MOD_READY_V1 {\"schema\":\"launcher-mod-ready-v1\",\"pid\":1234,\"url\":\"http://127.0.0.1:54321/\"}",
+    "readyRules": "Bounded stdout frame within 10 seconds; exact owned process PID; IPv4 numeric loopback and root path only; OS TCP table must attribute the listener to that PID; no credentials in URL/argv/log.",
+    "iframe": "sandbox=allow-scripts allow-same-origin; no native IPC forwarding. Page must allow http://tauri.localhost and tauri://localhost frame ancestors while preserving its own request-origin/CSRF checks.",
+    "shutdownStdin": "shutdown followed by LF, or stdin EOF",
+    "cleanup": "Owned Windows Job with kill-on-close. Graceful stop timeout then terminate only that Job; query zero active processes before reuse. Unexpected Mod exit closes owned descendants."
+  },
+  "storage": {
+    "programs": "launcher-mods/packages/<id>/current and previous",
+    "data": "launcher-mods/data/<id>",
+    "updates": "Require stopped instance, explicit approval and strictly higher version. Stage/verify before directory cutover; retain current and immediately previous; recover interrupted cutover and rollback.",
+    "rollback": "Explicit swap of approved current and previous; no host rebuild.",
+    "uninstall": "Remove approved program versions only. Preserve account/configuration data."
+  },
+  "localMode": "Mod and original local launch are mutually exclusive. An explicit switch restores local mode. Mod stop/quit never invokes the original global-by-process-name cleanup.",
+  "updater": "Original upstream host updater is refused because it may erase the extension. Business packages update independently within v1.",
+  "validationBoundary": "Code builds, OS helper lifecycle, HTTP/API, native transport fixtures and package updates are tested headlessly. DFO entry, real WFP/game behavior, cross-PC play and visual native UI acceptance remain actual-client tests."
+}

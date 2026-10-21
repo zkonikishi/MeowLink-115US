@@ -1,0 +1,54 @@
+[package]
+name = "dfo-launcher"
+version = "0.1.1"
+description = "DFO-115US 单机一键启动器（Tauri 重构版）"
+edition = "2021"
+
+[lib]
+name = "dfo_launcher_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[features]
+# 出包必须带上它（`npx tauri build` 会自己加）：不带时 tauri 的 `dev` cfg 生效，
+# 每个窗口的地址都取 build.devUrl(localhost:1420)，release exe 双击只剩「localhost 拒绝连接」错误页。
+prod = ["tauri/custom-protocol"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+launcher-mod-runtime = { path = "launcher-mod-runtime" }
+tauri = { version = "2", features = ["protocol-asset"] }
+tauri-plugin-opener = "2"
+tauri-plugin-dialog = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+chrono = { version = "0.4", default-features = false, features = ["clock", "std"] }
+rusqlite = { version = "0.40.2", features = ["bundled"] }
+sha2 = "0.11.1"
+# 只为主页壁纸取一个主题色：四种收进白名单的位图格式各留一个解码器，别把整 crate 拉进来。
+image = { version = "0.25", default-features = false, features = ["png", "jpeg", "webp", "gif"] }
+
+[target.'cfg(windows)'.dependencies]
+tauri-plugin-single-instance = "2"
+windows = { version = "0.58", features = [
+    "Win32_Foundation",
+    "Win32_Security",
+    "Win32_System_Threading",
+    "Win32_System_Diagnostics_ToolHelp",
+    # 连发引擎用的 Beep 挂在 Diagnostics_Debug 命名空间下（kernel32 的蜂鸣，不是调试 API）。
+    "Win32_System_Diagnostics_Debug",
+    "Win32_Storage_FileSystem",
+    "Win32_UI_Input_KeyboardAndMouse",
+    "Win32_UI_WindowsAndMessaging",
+    "Win32_Media",
+] }
+
+
+# Read the optimization guideline for more details: https://tauri.app/concept/size/#cargo-configuration
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = 3
+panic = "abort"
+strip = true

@@ -1,0 +1,42 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# 构建产物：9.8 GB 的 cargo 缓存与打包输出，绝不入库
+src-tauri/target
+src-tauri/gen/schemas
+
+# 本机工具状态与临时产物
+.qoder/
+.qoder-scratch/
+vibe_images/
+tmp/
+*.tmp
+
+# 编译时随手重定向的 stdout/stderr，只在本机看
+build-log.txt
+check-err.txt
+
+# 图标母图（入库的是 src-tauri/icons/ 里的生成物）
+app-icon.png
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
